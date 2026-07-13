@@ -15,8 +15,7 @@ const jobs = [
   "Plumber",
   "STP / ETP / WTP Operator",
   "Transformer Maintenance Technician",
-  "Lift Maintenance Technician",
-  "Diesel Generator Technician"
+  "Lift Maintenance Technician"
 ];
 
 const JobCard = ({ title, onApply }) => {

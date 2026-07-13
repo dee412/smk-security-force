@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Shield, ChevronRight } from 'lucide-react';
+import { Menu, X, Shield, ChevronRight, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../utils/cn';
 
@@ -9,7 +9,6 @@ const navLinks = [
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Industries', path: '/industries' },
-  { name: 'Careers', path: '/careers' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -32,6 +31,25 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  const handleNavClick = (e, path) => {
+    if (pathname === '/') {
+      if (path === '/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setMobileMenuOpen(false);
+        return;
+      }
+      
+      const targetId = path.replace('/', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({ behavior: 'smooth' });
+        setMobileMenuOpen(false);
+      }
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -47,7 +65,7 @@ const Navbar = () => {
             <img 
               src="/logo.jpg" 
               alt="SMK Security Force" 
-              className="h-14 md:h-16 w-auto object-contain mix-blend-darken transform scale-125 origin-left"
+              className="h-12 md:h-14 w-auto object-contain mix-blend-darken"
             />
           </Link>
 
@@ -57,9 +75,12 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={(e) => handleNavClick(e, link.path)}
                 className={cn(
                   'text-sm font-medium transition-colors duration-300 relative group',
-                  pathname === link.path ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900'
+                  scrolled 
+                    ? (pathname === link.path ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900')
+                    : (pathname === link.path ? 'text-white' : 'text-slate-300 hover:text-white')
                 )}
               >
                 {link.name}
@@ -75,18 +96,23 @@ const Navbar = () => {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link 
-              to="/assessment"
-              className="group flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-slate-800 transition-all duration-300 hover:shadow-md hover:shadow-slate-900/20 active:scale-95"
+            <a 
+              href="https://wa.me/919845659570"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 bg-green-500 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-green-600 transition-all duration-300 hover:shadow-md hover:shadow-green-500/20 active:scale-95"
             >
-              Free Assessment
-              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <MessageCircle size={16} />
+              WhatsApp
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden p-2 text-slate-600 hover:text-slate-900 transition-colors"
+            className={cn(
+              "lg:hidden p-2 transition-colors",
+              scrolled ? "text-slate-600 hover:text-slate-900" : "text-slate-300 hover:text-white"
+            )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -110,6 +136,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
+                  onClick={(e) => handleNavClick(e, link.path)}
                   className={cn(
                     'px-4 py-3 rounded-xl text-base font-medium transition-colors',
                     pathname === link.path 
@@ -120,16 +147,19 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              
+
               <div className="pt-4 mt-2 border-t border-slate-100 px-4">
-                <Link
-                  to="/assessment"
-                  className="w-full flex items-center justify-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl text-sm font-medium hover:bg-slate-800 transition-all"
+                <a
+                  href="https://wa.me/919845659570"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-green-500 text-white px-5 py-3 rounded-xl text-sm font-medium hover:bg-green-600 transition-all"
                 >
-                  Get a Free Security Assessment
-                  <ChevronRight size={16} />
-                </Link>
+                  <MessageCircle size={18} />
+                  WhatsApp
+                </a>
               </div>
+
             </div>
           </motion.div>
         )}

@@ -36,7 +36,6 @@ function App() {
           <Route path="about" element={<PlaceholderPage title="About SMK" />} />
           <Route path="services" element={<PlaceholderPage title="Our Services" />} />
           <Route path="industries" element={<PlaceholderPage title="Industries We Serve" />} />
-          <Route path="careers" element={<PlaceholderPage title="Careers at SMK" />} />
           <Route path="contact" element={<PlaceholderPage title="Contact Us" />} />
           <Route path="assessment" element={<PlaceholderPage title="Free Security Assessment" />} />
           <Route path="*" element={<PlaceholderPage title="404 - Page Not Found" />} />

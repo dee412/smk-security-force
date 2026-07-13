@@ -54,12 +54,41 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    // Mock API Delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log("Inquiry Submitted:", data);
-    setIsSubmitting(false);
+    
+    // 1. Submit to backend API in the background (does not block user or popup trigger)
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    fetch(`${apiUrl}/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => {
+      if (!response.ok) console.warn('Backend submission failed to return OK status.');
+      else console.log('Inquiry submitted to backend successfully in the background.');
+    })
+    .catch(error => {
+      console.warn('Backend API connection failed/offline. Proceeding with WhatsApp alert:', error);
+    });
+
+    // 2. Open WhatsApp prefilled message instantly (synchronously, preventing pop-up blocker)
+    const whatsappMessage = 
+      `*New Inquiry on SMK Security Force*\n\n` +
+      `*Name:* ${data.fullName}\n` +
+      `*Company:* ${data.companyName || 'N/A'}\n` +
+      `*Email:* ${data.email}\n` +
+      `*Phone:* ${data.phone}\n` +
+      `*City:* ${data.city || 'N/A'}\n` +
+      `*Service:* ${data.service}\n` +
+      `*Message:* ${data.message}`;
+
+    const whatsappUrl = `https://wa.me/919845659570?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+
     setIsSuccess(true);
     reset();
+    setIsSubmitting(false);
     
     // Auto reset success message after 5 seconds
     setTimeout(() => {
@@ -172,18 +201,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-2">Business Hours</h4>
-                  <p className="text-slate-400 text-sm">Business hours will be updated soon.</p>
-                </div>
-              </div>
-
-              {/* 24x7 Badge */}
-              <div className="mt-8 p-4 rounded-xl bg-gradient-to-r from-red-900/40 to-slate-900 border border-red-500/20 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-500">
-                  <ShieldAlert size={20} />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold text-sm">Emergency Support</h4>
-                  <p className="text-red-400 font-bold text-xl tracking-wider">24×7</p>
+                  <p className="text-slate-400 text-sm">24x7</p>
                 </div>
               </div>
 

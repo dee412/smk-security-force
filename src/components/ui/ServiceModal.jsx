@@ -127,7 +127,7 @@ const ServiceModal = ({ isOpen, onClose, service }) => {
                     <button
                       onClick={() => {
                         onClose();
-                        document.getElementById('assessment')?.scrollIntoView({ behavior: 'smooth' });
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                       }}
                       className="w-full group flex items-center justify-center gap-2 bg-slate-900 text-white px-6 py-4 rounded-xl text-base font-bold hover:bg-gold hover:text-slate-900 transition-all duration-300 shadow-lg"
                     >

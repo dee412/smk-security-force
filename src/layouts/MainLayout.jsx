@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import Navbar from '../components/common/Navbar';
-import Footer from '../components/common/Footer';
 
 const MainLayout = () => {
   const { pathname } = useLocation();
@@ -43,7 +42,6 @@ const MainLayout = () => {
       <main className="flex-grow">
         <Outlet />
       </main>
-      <Footer />
     </div>
   );
 };

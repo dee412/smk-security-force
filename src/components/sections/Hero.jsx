@@ -97,17 +97,7 @@ const Hero = () => {
           {/* Left Side: Content (55% on desktop -> col-span-7) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 w-fit mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-gold"></span>
-              <span className="text-xs font-semibold uppercase tracking-widest text-slate-300">
-                SMK SECURITY FORCE
-              </span>
-            </motion.div>
+
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -115,8 +105,11 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-white tracking-tight leading-[1.1] mb-6"
             >
-              Integrated Security & <br className="hidden sm:block"/>
-              <span className="text-gold">Facility Management Solutions</span>
+              SMK <br className="hidden sm:block"/>
+              <span className="text-gold">SECURITY FORCE</span>
+              <span className="block text-2xl sm:text-3xl lg:text-4xl text-slate-300 font-medium tracking-wide mt-2">
+                & FACILITY MANAGEMENT SERVICES
+              </span>
             </motion.h1>
 
             <motion.p
@@ -136,7 +129,7 @@ const Hero = () => {
             >
               <button
                 onClick={() => {
-                  document.getElementById('assessment')?.scrollIntoView({ behavior: 'smooth' });
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="w-full sm:w-auto group flex items-center justify-center gap-2 bg-gold text-slate-900 px-8 py-4 rounded-xl text-base font-bold hover:bg-yellow-500 transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] active:scale-95"
               >
