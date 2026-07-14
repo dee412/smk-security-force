@@ -227,7 +227,7 @@ const Hero = () => {
                 }}
               >
                 <img 
-                  src="/logo.png" 
+                  src="/logo.jpg" 
                   alt="SMK Security Force Official Logo" 
                   className="w-full h-full object-cover scale-110"
                 />

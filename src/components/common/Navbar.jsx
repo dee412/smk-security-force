@@ -63,7 +63,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/logo.png" 
+              src="/logo.jpg" 
               alt="SMK Security Force" 
               className="h-12 md:h-14 w-auto object-contain"
             />

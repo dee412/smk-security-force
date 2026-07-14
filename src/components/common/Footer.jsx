@@ -83,7 +83,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-white p-1">
-                <img src="/logo.png" alt="SMK Logo" className="w-full h-full object-contain" />
+                <img src="/logo.jpg" alt="SMK Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="text-xl font-bold font-heading text-white leading-tight">SMK Security Force</h3>
