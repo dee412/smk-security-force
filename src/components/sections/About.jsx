@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Target, Award, Users, Crosshair, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 const About = () => {
   const floatingCards = [
@@ -28,17 +27,6 @@ const About = () => {
           {/* Left Side: Typography & Content */}
           <div className="flex flex-col text-left">
             
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 w-fit mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-gold"></span>
-              <span className="text-xs font-semibold uppercase tracking-widest text-slate-600">About SMK Security Force</span>
-            </motion.div>
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -146,11 +134,11 @@ const About = () => {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.5 + card.delay, ease: "easeOut" }}
                 animate={{
                   y: [0, -10, 0]
                 }}
                 transition={{
+                  default: { duration: 0.8, delay: 0.5 + card.delay, ease: "easeOut" },
                   y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: card.delay * 2 }
                 }}
                 className="absolute px-6 py-4 rounded-2xl glass-dark shadow-xl backdrop-blur-xl border border-white/10"

@@ -2,14 +2,26 @@ import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import Navbar from '../components/common/Navbar';
+import Footer from '../components/common/Footer';
 
 const MainLayout = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // Scroll to top on route change
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (pathname === '/' && hash) {
+      const id = hash;
+      const timer = setTimeout(() => {
+        const element = document.querySelector(id);
+        if (element) {
+          window.lenis?.scrollTo(id, { duration: 1.2 });
+        }
+      }, 150);
+      return () => clearTimeout(timer);
+    } else if (!hash) {
+      window.lenis?.scrollTo(0, { immediate: true });
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -24,6 +36,8 @@ const MainLayout = () => {
       infinite: false,
     });
 
+    window.lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -33,6 +47,7 @@ const MainLayout = () => {
 
     return () => {
       lenis.destroy();
+      window.lenis = null;
     };
   }, []);
 
@@ -42,6 +57,7 @@ const MainLayout = () => {
       <main className="flex-grow">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };

@@ -64,16 +64,6 @@ const HowWeWork = () => {
         
         {/* Header Section */}
         <div className="max-w-3xl mb-16 lg:mb-24 text-center mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 w-fit mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-gold"></span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">How We Work</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

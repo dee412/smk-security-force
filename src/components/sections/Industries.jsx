@@ -119,16 +119,6 @@ const Industries = () => {
           
           {/* Header */}
           <div className="max-w-3xl mb-16 lg:mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 w-fit mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-gold"></span>
-              <span className="text-xs font-semibold uppercase tracking-widest text-slate-700">Industries We Serve</span>
-            </motion.div>
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

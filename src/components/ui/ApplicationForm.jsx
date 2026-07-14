@@ -115,7 +115,7 @@ const ApplicationForm = ({ prefilledPosition }) => {
   const [resume, setResume] = useState(null);
   const [aadhaar, setAadhaar] = useState(null);
 
-  const { register, handleSubmit, formState: { errors }, setValue, watch } = useForm({
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       position: prefilledPosition || ""

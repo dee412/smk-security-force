@@ -23,7 +23,6 @@ const sidebarLinks = [
   { name: 'Website Content', path: '/admin/content', icon: Globe },
   { name: 'Services', path: '/admin/services', icon: Settings },
   { name: 'Industries', path: '/admin/industries', icon: Briefcase },
-  { name: 'Careers', path: '/admin/applications', icon: Users },
   { name: 'Contact Inquiries', path: '/admin/inquiries', icon: MessageSquare },
   { name: 'Gallery', path: '/admin/gallery', icon: ImageIcon },
   { name: 'Team Members', path: '/admin/team', icon: Users },

@@ -67,7 +67,7 @@ const servicesData = [
     title: "Pest Control Services",
     description: "Safe, effective, and environmentally responsible pest management solutions.",
     icon: BugOff,
-    image: "https://images.unsplash.com/photo-1628186101150-13f5d52eddae?q=80&w=1000&auto=format&fit=crop",
+    image: "/pest-control.png",
     colSpan: "lg:col-span-1",
     rowSpan: "lg:row-span-1"
   },
@@ -76,7 +76,7 @@ const servicesData = [
     title: "STP, ETP, WTP & RO Plant Maintenance",
     description: "Operation and maintenance of sewage treatment, water treatment, effluent treatment, and reverse osmosis plants.",
     icon: Droplet,
-    image: "https://images.unsplash.com/photo-1615024760773-c15c54d24177?q=80&w=1000&auto=format&fit=crop",
+    image: "/water-treatment.png",
     colSpan: "lg:col-span-2", // Wide card
     rowSpan: "lg:row-span-1"
   },
@@ -94,7 +94,7 @@ const servicesData = [
     title: "Lift & DG Maintenance",
     description: "Comprehensive maintenance of elevators and diesel generator systems for uninterrupted operations.",
     icon: ArrowUpToLine,
-    image: "https://images.unsplash.com/photo-1579247289081-dc2a98314e1c?q=80&w=1000&auto=format&fit=crop",
+    image: "/lift-dg.png",
     colSpan: "lg:col-span-1",
     rowSpan: "lg:row-span-1"
   },
@@ -103,7 +103,7 @@ const servicesData = [
     title: "Housekeeping Material Supply",
     description: "Supply of professional housekeeping materials, cleaning chemicals, consumables, and facility management products.",
     icon: Package,
-    image: "https://images.unsplash.com/photo-1584820927498-cafe4c21469e?q=80&w=1000&auto=format&fit=crop",
+    image: "/housekeeping-supplies.png",
     colSpan: "lg:col-span-2", // Wide Card
     rowSpan: "lg:row-span-1"
   }
@@ -141,16 +141,6 @@ const Services = () => {
           
           {/* Header */}
           <div className="max-w-3xl mb-16 lg:mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200 border border-slate-300 w-fit mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-gold"></span>
-              <span className="text-xs font-semibold uppercase tracking-widest text-slate-700">Our Services</span>
-            </motion.div>
-
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

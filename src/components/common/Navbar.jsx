@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Shield, ChevronRight, MessageCircle } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../utils/cn';
 
@@ -63,9 +63,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/logo.jpg" 
+              src="/logo.png" 
               alt="SMK Security Force" 
-              className="h-12 md:h-14 w-auto object-contain mix-blend-darken"
+              className="h-12 md:h-14 w-auto object-contain"
             />
           </Link>
 
@@ -94,18 +94,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <a 
-              href="https://wa.me/919845659570"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2 bg-green-500 text-white px-5 py-2.5 rounded-xl text-sm font-medium hover:bg-green-600 transition-all duration-300 hover:shadow-md hover:shadow-green-500/20 active:scale-95"
-            >
-              <MessageCircle size={16} />
-              WhatsApp
-            </a>
-          </div>
+
 
           {/* Mobile Menu Toggle */}
           <button
@@ -148,17 +137,7 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              <div className="pt-4 mt-2 border-t border-slate-100 px-4">
-                <a
-                  href="https://wa.me/919845659570"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-green-500 text-white px-5 py-3 rounded-xl text-sm font-medium hover:bg-green-600 transition-all"
-                >
-                  <MessageCircle size={18} />
-                  WhatsApp
-                </a>
-              </div>
+
 
             </div>
           </motion.div>

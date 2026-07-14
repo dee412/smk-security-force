@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, MessageCircle } from 'lucide-react';
 
 const FloatingActions = () => {
   const [showTop, setShowTop] = useState(false);
@@ -42,6 +42,22 @@ const FloatingActions = () => {
           </motion.button>
         )}
       </AnimatePresence>
+
+      {/* WhatsApp Chat Button */}
+      <motion.a
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4, delay: 0.5 }}
+        href="https://wa.me/919845659570"
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.1, y: -2 }}
+        whileTap={{ scale: 0.95 }}
+        className="w-12 h-12 rounded-full bg-[#25D366] text-white shadow-lg flex items-center justify-center hover:bg-[#20ba5a] transition-all duration-300 border border-[#25D366]/20"
+        aria-label="Contact on WhatsApp"
+      >
+        <MessageCircle size={24} />
+      </motion.a>
 
     </div>
   );

@@ -16,8 +16,6 @@ const Hero = () => {
 
   const rotateX = useTransform(springY, [-0.5, 0.5], ["15deg", "-15deg"]);
   const rotateY = useTransform(springX, [-0.5, 0.5], ["-15deg", "15deg"]);
-  const shadowX = useTransform(springX, [-0.5, 0.5], ["20px", "-20px"]);
-  const shadowY = useTransform(springY, [-0.5, 0.5], ["20px", "-20px"]);
 
   const handleMouseMove = (e) => {
     if (!logoRef.current) return;
@@ -92,7 +90,7 @@ const Hero = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[calc(100vh-100px)] py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[calc(100vh-100px)] pt-28 pb-12 lg:pt-32">
           
           {/* Left Side: Content (55% on desktop -> col-span-7) */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
@@ -111,6 +109,25 @@ const Hero = () => {
                 & FACILITY MANAGEMENT SERVICES
               </span>
             </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: 1, 
+                y: [0, -6, 0] 
+              }}
+              transition={{ 
+                opacity: { duration: 0.8, delay: 0.15, ease: "easeOut" },
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg w-fit mb-6"
+            >
+              <img src="/iso-9001.png?v=2" alt="ISO 9001" className="h-8 w-auto object-contain" />
+              <div className="h-6 w-px bg-white/20"></div>
+              <span className="text-xs font-semibold tracking-wider text-slate-200 uppercase">
+                ISO 9001:2015 Certified Company
+              </span>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -210,9 +227,9 @@ const Hero = () => {
                 }}
               >
                 <img 
-                  src="/logo.jpg" 
+                  src="/logo.png" 
                   alt="SMK Security Force Official Logo" 
-                  className="w-full h-full object-cover mix-blend-screen scale-110"
+                  className="w-full h-full object-cover scale-110"
                 />
 
                 {/* Glass Reflection Overlay */}

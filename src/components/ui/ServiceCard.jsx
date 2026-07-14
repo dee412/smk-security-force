@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const ServiceCard = ({ service, index, onClick, className = "" }) => {
+const ServiceCard = ({ service, onClick, className = "" }) => {
   const cardRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -64,10 +64,10 @@ const ServiceCard = ({ service, index, onClick, className = "" }) => {
             src={service.image} 
             alt={service.title} 
             loading="lazy"
-            className="w-full h-full object-cover opacity-80 mix-blend-screen"
+            className={`w-full h-full object-cover transition-opacity duration-500 ${isHovered ? 'opacity-85' : 'opacity-60'}`}
           />
-          {/* Dark Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-slate-900/40 mix-blend-multiply"></div>
+          {/* Soft Bottom-Only Vignette for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent pointer-events-none"></div>
         </motion.div>
 
         {/* Content Container */}

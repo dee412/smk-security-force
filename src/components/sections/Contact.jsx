@@ -8,7 +8,6 @@ import {
   Phone, 
   Mail, 
   Clock, 
-  ShieldAlert, 
   Send,
   Loader2,
   CheckCircle2,
@@ -107,16 +106,6 @@ const Contact = () => {
         
         {/* Header */}
         <div className="max-w-3xl mb-16 lg:mb-24 text-center mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 w-fit mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">Contact Us</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -243,8 +232,21 @@ const Contact = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-7"
+            className="lg:col-span-7 flex flex-col gap-6"
           >
+            {/* ISO Logo Fade-In Banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 w-fit backdrop-blur-md self-center lg:self-start"
+            >
+              <img src="/iso-9001.png?v=2" alt="ISO 9001:2015 Certification" className="h-8 w-auto object-contain" />
+              <span className="text-xs font-semibold tracking-wider text-slate-300 uppercase">
+                ISO 9001:2015 Certified Quality Management System
+              </span>
+            </motion.div>
+
             <div className="bg-white rounded-[2rem] p-8 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
               
               {/* Form Success Overlay */}
