@@ -69,8 +69,8 @@ const FeatureCard = ({ feature }) => {
       <div className="relative z-10">
         <div className="w-14 h-14 mb-6">
           {isIso ? (
-            <div className="w-14 h-14 rounded-full bg-white p-1 flex items-center justify-center shadow-md border border-slate-200">
-              <img src="/iso-9001.png?v=2" alt="ISO 9001 Seal" className="w-full h-full object-contain" />
+            <div className="w-14 h-14 rounded-full bg-white overflow-hidden flex items-center justify-center shadow-md border border-slate-200">
+              <img src="/iso-9001.png?v=2" alt="ISO 9001 Seal" className="w-full h-full object-cover" />
             </div>
           ) : (
             <div className="w-14 h-14 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 group-hover:text-gold group-hover:border-gold/30 group-hover:bg-gold/10 transition-colors duration-500">
