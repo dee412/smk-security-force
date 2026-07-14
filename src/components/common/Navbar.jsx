@@ -65,7 +65,7 @@ const Navbar = () => {
             <img 
               src="/logo.jpg" 
               alt="SMK Security Force" 
-              className="h-12 md:h-14 w-auto object-contain p-2.5"
+              className="h-12 md:h-14 w-auto object-contain p-1"
             />
           </Link>
 
