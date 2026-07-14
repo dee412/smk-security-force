@@ -122,7 +122,9 @@ const Hero = () => {
               }}
               className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg w-fit mb-6"
             >
-              <img src="/iso-9001.png?v=2" alt="ISO 9001" className="h-8 w-auto object-contain" />
+              <div className="w-8 h-8 rounded-full bg-white overflow-hidden flex items-center justify-center shrink-0">
+                <img src="/iso-9001.png?v=2" alt="ISO 9001" className="w-full h-full object-cover" />
+              </div>
               <div className="h-6 w-px bg-white/20"></div>
               <span className="text-xs font-semibold tracking-wider text-slate-200 uppercase">
                 ISO 9001:2015 Certified Company
