@@ -110,26 +110,6 @@ const Hero = () => {
               </span>
             </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: 1, 
-                y: [0, -6, 0] 
-              }}
-              transition={{ 
-                opacity: { duration: 0.8, delay: 0.15, ease: "easeOut" },
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-              }}
-              className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-lg w-fit mb-6"
-            >
-              <div className="w-8 h-8 rounded-full bg-white overflow-hidden flex items-center justify-center shrink-0">
-                <img src="/iso-9001.png?v=2" alt="ISO 9001" className="w-full h-full object-cover" />
-              </div>
-              <div className="h-6 w-px bg-white/20"></div>
-              <span className="text-xs font-semibold tracking-wider text-slate-200 uppercase">
-                ISO 9001:2015 Certified Company
-              </span>
-            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

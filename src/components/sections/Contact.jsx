@@ -234,21 +234,6 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="lg:col-span-7 flex flex-col gap-6"
           >
-            {/* ISO Logo Fade-In Banner */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 w-fit backdrop-blur-md self-center lg:self-start"
-            >
-              <div className="w-8 h-8 rounded-full bg-white overflow-hidden flex items-center justify-center shrink-0">
-                <img src="/iso-9001.png?v=2" alt="ISO 9001:2015 Certification" className="w-full h-full object-cover" />
-              </div>
-              <span className="text-xs font-semibold tracking-wider text-slate-300 uppercase">
-                ISO 9001:2015 Certified Quality Management System
-              </span>
-            </motion.div>
-
             <div className="bg-white rounded-[2rem] p-8 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
               
               {/* Form Success Overlay */}

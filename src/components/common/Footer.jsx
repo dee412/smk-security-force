@@ -61,7 +61,8 @@ const Footer = () => {
   };
 
   return (
-    <footer
+    <div className="bg-slate-950">
+      <footer
       ref={footerRef}
       className="bg-slate-950 pt-20 pb-10 border-t border-slate-800 rounded-t-[2.5rem] relative overflow-hidden"
     >
@@ -110,6 +111,11 @@ const Footer = () => {
                   {social.svg}
                 </a>
               ))}
+            </div>
+
+            {/* ISO Logo */}
+            <div className="w-12 h-12 rounded-full bg-white overflow-hidden flex items-center justify-center mt-4 shadow-md">
+              <img src="/iso-9001.png?v=2" alt="ISO 9001:2015 Certification" className="w-full h-full object-cover" />
             </div>
           </motion.div>
 
@@ -205,7 +211,8 @@ const Footer = () => {
         </motion.div>
 
       </div>
-    </footer>
+      </footer>
+    </div>
   );
 };
 
