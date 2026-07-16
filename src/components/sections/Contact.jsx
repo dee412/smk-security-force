@@ -11,7 +11,8 @@ import {
   Send,
   Loader2,
   CheckCircle2,
-  Navigation
+  Navigation,
+  Globe
 } from 'lucide-react';
 
 // Zod Schema
@@ -27,8 +28,8 @@ const contactSchema = z.object({
 });
 
 const serviceOptions = [
-  "Housekeeping Services",
   "Security & Detective Services",
+  "Housekeeping Services",
   "Gardening & Landscape Maintenance",
   "Pest Control Services",
   "Building Management System (BMS) Operations",
@@ -50,6 +51,19 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
     defaultValues: { service: "" }
   });
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    const messageInput = document.querySelector('textarea[name="message"]');
+    if (messageInput) {
+      messageInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        messageInput.focus();
+      }, 500);
+    } else {
+      window.location.href = "mailto:smkinfo.blr@gmail.com";
+    }
+  };
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -176,8 +190,27 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-2">Email</h4>
-                  <a href="mailto:smkinfo.blr@gmail.com" className="text-slate-400 text-sm hover:text-gold transition-colors inline-block">
+                  <a href="mailto:smkinfo.blr@gmail.com" onClick={handleEmailClick} className="text-slate-400 text-sm hover:text-gold transition-colors inline-block">
                     smkinfo.blr@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="w-full h-px bg-slate-800"></div>
+
+              <div className="flex gap-4 items-start">
+                <div className="shrink-0 w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center text-gold border border-slate-700">
+                  <Globe size={24} />
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-2">Website</h4>
+                  <a 
+                    href="https://www.smksf.in" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-slate-400 text-sm hover:text-gold transition-colors font-medium"
+                  >
+                    www.smksf.in
                   </a>
                 </div>
               </div>

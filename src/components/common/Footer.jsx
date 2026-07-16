@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Globe } from 'lucide-react';
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -34,8 +34,8 @@ const Footer = () => {
   ];
 
   const services = [
-    "Housekeeping Services",
     "Security & Detective Services",
+    "Housekeeping Services",
     "Gardening & Landscape Maintenance",
     "Pest Control Services",
     "Building Management System (BMS) Operations",
@@ -57,6 +57,22 @@ const Footer = () => {
         // Fallback for top of page if #hero is missing
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+    }
+  };
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const messageInput = document.querySelector('textarea[name="message"]');
+        if (messageInput) {
+          messageInput.focus();
+        }
+      }, 800);
+    } else {
+      window.location.href = "mailto:smkinfo.blr@gmail.com";
     }
   };
 
@@ -82,15 +98,20 @@ const Footer = () => {
 
           {/* Column 1: Branding */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-white overflow-hidden">
+            <a 
+              href="https://www.smksf.in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-3 group w-fit"
+            >
+              <div className="w-12 h-12 rounded-xl bg-white overflow-hidden p-0.5 border border-transparent group-hover:border-gold transition-all duration-300">
                 <img src="/logo.jpg" alt="SMK Logo" className="w-full h-full object-cover" />
               </div>
               <div>
-                <h3 className="text-xl font-bold font-heading text-white leading-tight">SMK Security Force</h3>
+                <h3 className="text-xl font-bold font-heading text-white leading-tight group-hover:text-gold transition-colors duration-300">SMK Security Force</h3>
                 <p className="text-xs text-gold uppercase tracking-widest font-semibold">Security & Facility Management</p>
               </div>
-            </div>
+            </a>
             <p className="text-slate-400 text-sm leading-relaxed pr-4">
               SMK Security Force delivers professional Security and Integrated Facility Management solutions tailored for residential, commercial, industrial and institutional environments.
             </p>
@@ -112,6 +133,8 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+
+
 
             {/* ISO Logo */}
             <div className="w-12 h-12 rounded-full bg-white overflow-hidden flex items-center justify-center mt-4 shadow-md">
@@ -183,7 +206,19 @@ const Footer = () => {
 
             <div className="flex items-center gap-3 text-slate-400 text-sm">
               <Mail size={18} className="shrink-0 text-gold" />
-              <a href="mailto:smkinfo.blr@gmail.com" className="hover:text-gold transition-colors">smkinfo.blr@gmail.com</a>
+              <a href="mailto:smkinfo.blr@gmail.com" onClick={handleEmailClick} className="hover:text-gold transition-colors">smkinfo.blr@gmail.com</a>
+            </div>
+
+            <div className="flex items-center gap-3 text-slate-400 text-sm">
+              <Globe size={18} className="shrink-0 text-gold" />
+              <a 
+                href="https://www.smksf.in" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-gold transition-colors font-medium"
+              >
+                www.smksf.in
+              </a>
             </div>
 
             <div className="flex items-center gap-3 text-slate-400 text-sm">
@@ -200,9 +235,21 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500"
+          className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500"
         >
-          <p>© 2026 SMK Security Force. All Rights Reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <a 
+              href="https://www.smksf.in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 group transition-all"
+            >
+              <Globe size={18} className="text-slate-400 group-hover:text-gold transition-colors duration-300" />
+              <span className="font-semibold text-slate-400 group-hover:text-gold transition-colors duration-300">www.smksf.in</span>
+            </a>
+            <span className="hidden sm:inline text-slate-800">|</span>
+            <p>© 2026 SMK Security Force. All Rights Reserved.</p>
+          </div>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-gold transition-colors">Terms & Conditions</a>
