@@ -100,7 +100,7 @@ const TeamSection = () => {
             transition={{ delay: 0.2 }}
             className="text-slate-300 text-lg font-body leading-relaxed"
           >
-            Meet the actual uniformed security guards, female security officers, and field supervisors delivering uncompromised protection and facility management across Tamil Nadu.
+            Meet the actual uniformed security guards, female security officers, and field supervisors delivering uncompromised protection and facility management.
           </motion.p>
         </div>
 

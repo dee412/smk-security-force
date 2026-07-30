@@ -22,16 +22,16 @@ const servicesData = [
     title: "Security & Detective Services",
     description: "Professional guarding, surveillance, access control, executive protection, and investigative services.",
     icon: ShieldCheck,
-    image: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/team/team-3.png",
     colSpan: "lg:col-span-2", // Large card
     rowSpan: "lg:row-span-2"
   },
   {
     id: "housekeeping",
-    title: "Housekeeping Services",
-    description: "Professional housekeeping solutions for residential, commercial, industrial, healthcare, and institutional facilities.",
+    title: "Housekeeping & Support Services",
+    description: "Professional housekeeping, facility upkeep, and integrated support solutions for corporate & commercial environments.",
     icon: Sparkles,
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1000&auto=format&fit=crop",
+    image: "/images/team/team-1.png",
     colSpan: "lg:col-span-2", // Wide card
     rowSpan: "lg:row-span-1"
   },

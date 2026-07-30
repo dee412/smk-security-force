@@ -146,6 +146,53 @@ const WhyChooseUs = () => {
           ))}
         </motion.div>
 
+        {/* Real Personnel & Operational Excellence Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-slate-900/60 rounded-3xl p-8 lg:p-12 border border-slate-800"
+        >
+          <div className="space-y-6 text-left">
+            <span className="px-3.5 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold uppercase tracking-wider">
+              Operational Rigor
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-bold font-heading text-white leading-tight">
+              Trained Force, Strict Supervision & <span className="text-gold">Continuous Audits</span>
+            </h3>
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed font-body">
+              Our strength lies in our people. From front-line security officers to field supervisors conducting night surprise inspections, we maintain strict adherence to uniform protocols, alertness, and customer courtesy.
+            </p>
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
+                <div className="text-2xl font-bold text-gold font-heading mb-1">100%</div>
+                <div className="text-xs text-slate-300">Police & Background Verified</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-950/60 border border-slate-800">
+                <div className="text-2xl font-bold text-gold font-heading mb-1">24/7</div>
+                <div className="text-xs text-slate-300">Mobile Patrol Supervision</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 h-full min-h-[260px]">
+            <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative group">
+              <img src="/images/team/team-2.png" alt="SMK Guard Squad" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <span className="absolute bottom-3 left-3 text-xs font-semibold text-white bg-slate-950/80 px-2.5 py-1 rounded-md border border-white/10">
+                Guard Squad
+              </span>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl relative group">
+              <img src="/images/team/team-4.png" alt="SMK Field Supervision" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <span className="absolute bottom-3 left-3 text-xs font-semibold text-white bg-slate-950/80 px-2.5 py-1 rounded-md border border-white/10">
+                Field Leadership
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Bottom Premium CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
