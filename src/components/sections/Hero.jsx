@@ -226,6 +226,26 @@ const Hero = () => {
                 />
               </div>
 
+              {/* Floating Verified Security Workforce Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="absolute -bottom-6 -left-6 z-30 px-4 py-3 rounded-2xl bg-slate-900/90 border border-gold/40 shadow-2xl backdrop-blur-xl flex items-center gap-3 hover:scale-105 transition-transform duration-300"
+              >
+                <div>
+                  <div className="flex items-center gap-1.5 text-gold text-xs font-bold uppercase tracking-wider">
+                    <CheckCircle2 size={12} />
+                    Verified Personnel
+                  </div>
+                  <div className="text-white text-xs font-semibold">Trained Guard Force</div>
+                </div>
+              </motion.div>
+
             </motion.div>
           </div>
 

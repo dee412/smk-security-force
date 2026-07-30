@@ -114,17 +114,28 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: "easeOut" }}
-              className="relative w-[85%] h-[85%] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-900/10 border-8 border-white bg-slate-100"
+              className="relative w-[90%] h-[85%] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-slate-900/10 border-8 border-white bg-slate-100 group pointer-events-auto"
             >
-              {/* Using the generated composite image */}
+              {/* Using the processed team image in executive corporate lobby */}
               <img 
-                src="/about-composite.png" 
-                alt="SMK Enterprise Security & Facility Management" 
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000"
+                src="/images/team/team-1.png" 
+                alt="SMK Security Force Trained Uniformed Workforce" 
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
               />
               
-              {/* Subtle dark overlay for premium feel */}
-              <div className="absolute inset-0 bg-slate-900/10 mix-blend-multiply"></div>
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+              {/* Bottom Tag */}
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-between">
+                <div>
+                  <h4 className="text-sm font-bold text-white font-heading">SMK Certified Guard Force</h4>
+                  <p className="text-xs text-slate-300">Trained male & female security officers</p>
+                </div>
+                <span className="px-3 py-1 rounded-full bg-gold text-slate-950 text-xs font-extrabold uppercase tracking-wider">
+                  Verified
+                </span>
+              </div>
             </motion.div>
 
             {/* Floating Glass Cards */}
